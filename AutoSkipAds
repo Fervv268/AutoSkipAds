@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Pobieranie AutoSkipAds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background: #fafcff; color: #222; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;}
+    .box { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0001; padding: 2.5rem 2rem; text-align: center; }
+    h1 { color: #0b82d9; margin-bottom: 0.5em; }
+    a.button { display: inline-block; margin-top: 1.5em; background: #0b82d9; color: #fff; text-decoration: none; font-weight: 600; padding: 0.7em 2em; border-radius: 8px; font-size: 1.1em; transition: background 0.2s;}
+    a.button:hover { background: #005fa3;}
+    .small { color: #555; margin-top: 2em; font-size: 0.95em;}
+  </style>
+  <script>
+    const apk = "https://github.com/Fervv268/AutoSkipAds/releases/download/v1.0/AutoSkipAds-v1.apk";
+    window.addEventListener('DOMContentLoaded', () => {
+      // Automatyczne pobieranie po 1 sekundzie
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = apk;
+        a.download = "";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }, 1000);
+      document.getElementById('manual').href = apk;
+    });
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h1>AutoSkipAds</h1>
+    <p>Pobieranie pliku APK rozpocznie się automatycznie.<br>
+    Jeżeli pobieranie nie rozpocznie się w ciągu kilku sekund,<br>
+    kliknij poniższy przycisk:</p>
+    <a id="manual" class="button" href="#" download>📥 Pobierz AutoSkipAds-v1.apk</a>
+    <div class="small">
+      <br>Oficjalny plik APK z <a href="https://github.com/Fervv268/AutoSkipAds" target="_blank">GitHub</a>
+      <br><br>© 2025 Fervv268
+    </div>
+  </div>
+</body>
+</html>
